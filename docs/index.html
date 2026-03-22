@@ -19,6 +19,10 @@
         padding: 3rem 1.5rem;
       }
 
+      body > div {
+        margin: 0 auto;
+      }
+
       pre {
         white-space: pre;
         tab-size: 2;
@@ -29,10 +33,25 @@
         line-height: 1.6;
         color: var(--muted-foreground);
       }
+
+      /* Theme switcher swatches */
+      [data-base],
+      [data-color] {
+        width: 1.5rem;
+        height: 1.5rem;
+        border-radius: 9999px;
+        border: 2px solid transparent;
+        padding: 0;
+      }
+
+      /* View HTML code toggles */
+      [stack] > details:last-child {
+        border-bottom: none;
+      }
     </style>
   </head>
   <body>
-    <div stack="2xl" max-w="xl" style="margin: 0 auto">
+    <div stack="2xl" max-w="xl">
       <!-- Header -->
       <header stack>
         <h1>Slick CSS</h1>
@@ -46,91 +65,73 @@
 
       <!-- Theme Switcher -->
       <section stack>
-        <div row style="align-items: center; gap: 0.75rem">
-          <label style="font-size: 0.875rem; font-weight: 500">Theme</label>
-          <div row style="gap: 0.375rem">
+        <div row="sm">
+          <label>Base</label>
+          <div row>
+            <button data-base="neutral" aria-label="Neutral base" style="background: oklch(0.45 0 0)"></button>
+            <button data-base="stone" aria-label="Stone base" style="background: oklch(0.45 0.04 56)"></button>
+            <button data-base="zinc" aria-label="Zinc base" style="background: oklch(0.45 0.04 286)"></button>
+            <button data-base="mauve" aria-label="Mauve base" style="background: oklch(0.45 0.06 322)"></button>
+            <button data-base="olive" aria-label="Olive base" style="background: oklch(0.45 0.06 107)"></button>
+            <button data-base="mist" aria-label="Mist base" style="background: oklch(0.45 0.05 224)"></button>
+            <button data-base="taupe" aria-label="Taupe base" style="background: oklch(0.45 0.04 43)"></button>
+          </div>
+        </div>
+        <div row="sm">
+          <label>Color</label>
+          <div row>
+            <button data-color="default" aria-label="Default color" style="background: oklch(0.922 0 0)"></button>
+            <button data-color="amber" aria-label="Amber color" style="background: oklch(0.473 0.137 46.201)"></button>
+            <button data-color="blue" aria-label="Blue color" style="background: oklch(0.424 0.199 265.638)"></button>
+            <button data-color="cyan" aria-label="Cyan color" style="background: oklch(0.45 0.085 224.283)"></button>
             <button
-              data-theme="zinc"
-              aria-label="Zinc theme"
-              style="
-                background: oklch(92.2% 0 0deg);
-                width: 1.5rem;
-                height: 1.5rem;
-                border-radius: 9999px;
-                border: 2px solid transparent;
-                padding: 0;
-              "
+              data-color="emerald"
+              aria-label="Emerald color"
+              style="background: oklch(0.432 0.095 166.913)"
             ></button>
             <button
-              data-theme="blue"
-              aria-label="Blue theme"
-              style="
-                background: oklch(0.593 0.204 264.376);
-                width: 1.5rem;
-                height: 1.5rem;
-                border-radius: 9999px;
-                border: 2px solid transparent;
-                padding: 0;
-              "
+              data-color="fuchsia"
+              aria-label="Fuchsia color"
+              style="background: oklch(0.452 0.211 324.591)"
+            ></button>
+            <button data-color="green" aria-label="Green color" style="background: oklch(0.453 0.124 130.933)"></button>
+            <button
+              data-color="indigo"
+              aria-label="Indigo color"
+              style="background: oklch(0.398 0.195 277.366)"
+            ></button>
+            <button data-color="lime" aria-label="Lime color" style="background: oklch(0.453 0.124 130.933)"></button>
+            <button data-color="orange" aria-label="Orange color" style="background: oklch(0.47 0.157 37.304)"></button>
+            <button data-color="pink" aria-label="Pink color" style="background: oklch(0.459 0.187 3.815)"></button>
+            <button
+              data-color="purple"
+              aria-label="Purple color"
+              style="background: oklch(0.438 0.218 303.724)"
+            ></button>
+            <button data-color="red" aria-label="Red color" style="background: oklch(0.444 0.177 26.899)"></button>
+            <button data-color="rose" aria-label="Rose color" style="background: oklch(0.455 0.188 13.697)"></button>
+            <button data-color="sky" aria-label="Sky color" style="background: oklch(0.443 0.11 240.79)"></button>
+            <button data-color="teal" aria-label="Teal color" style="background: oklch(0.437 0.078 188.216)"></button>
+            <button
+              data-color="violet"
+              aria-label="Violet color"
+              style="background: oklch(0.432 0.232 292.759)"
             ></button>
             <button
-              data-theme="green"
-              aria-label="Green theme"
-              style="
-                background: oklch(0.627 0.164 164.36);
-                width: 1.5rem;
-                height: 1.5rem;
-                border-radius: 9999px;
-                border: 2px solid transparent;
-                padding: 0;
-              "
-            ></button>
-            <button
-              data-theme="rose"
-              aria-label="Rose theme"
-              style="
-                background: oklch(0.645 0.246 16.439);
-                width: 1.5rem;
-                height: 1.5rem;
-                border-radius: 9999px;
-                border: 2px solid transparent;
-                padding: 0;
-              "
-            ></button>
-            <button
-              data-theme="orange"
-              aria-label="Orange theme"
-              style="
-                background: oklch(0.69 0.204 70.746);
-                width: 1.5rem;
-                height: 1.5rem;
-                border-radius: 9999px;
-                border: 2px solid transparent;
-                padding: 0;
-              "
-            ></button>
-            <button
-              data-theme="violet"
-              aria-label="Violet theme"
-              style="
-                background: oklch(0.627 0.265 303.9);
-                width: 1.5rem;
-                height: 1.5rem;
-                border-radius: 9999px;
-                border: 2px solid transparent;
-                padding: 0;
-              "
+              data-color="yellow"
+              aria-label="Yellow color"
+              style="background: oklch(0.795 0.184 86.047)"
             ></button>
           </div>
         </div>
-        <div row style="align-items: center; gap: 0.75rem">
-          <label style="font-size: 0.875rem; font-weight: 500">Radius</label>
-          <div row style="gap: 0.375rem">
-            <button ghost data-radius="0" style="font-size: 0.75rem">0</button>
-            <button ghost data-radius="0.375rem" style="font-size: 0.75rem">S</button>
-            <button ghost data-radius="0.625rem" style="font-size: 0.75rem">M</button>
-            <button ghost data-radius="0.875rem" style="font-size: 0.75rem">L</button>
-            <button ghost data-radius="1.25rem" style="font-size: 0.75rem">XL</button>
+        <div row="sm">
+          <label>Radius</label>
+          <div row>
+            <button sm ghost data-radius="0">0</button>
+            <button sm ghost data-radius="0.375rem">S</button>
+            <button sm ghost data-radius="0.625rem">M</button>
+            <button sm ghost data-radius="0.875rem">L</button>
+            <button sm ghost data-radius="1.25rem">XL</button>
           </div>
         </div>
       </section>
@@ -150,20 +151,18 @@
           <button disabled>Disabled</button>
         </div>
         <div row>
+          <button sm>Small</button>
+          <button sm secondary>Small</button>
+          <button sm outline>Small</button>
+        </div>
+        <div row>
           <button aria-busy="true">Loading</button>
           <button secondary aria-busy="true">Loading</button>
           <button outline aria-busy="true">Loading</button>
         </div>
         <details>
           <summary>View HTML</summary>
-          <pre><code>&lt;button&gt;Primary&lt;/button&gt;
-&lt;button secondary&gt;Secondary&lt;/button&gt;
-&lt;button destructive&gt;Destructive&lt;/button&gt;
-&lt;button outline&gt;Outline&lt;/button&gt;
-&lt;button ghost&gt;Ghost&lt;/button&gt;
-&lt;button link&gt;Link&lt;/button&gt;
-&lt;button disabled&gt;Disabled&lt;/button&gt;
-&lt;button aria-busy=&quot;true&quot;&gt;Loading&lt;/button&gt;</code></pre>
+          <pre><code></code></pre>
         </details>
       </section>
       <hr />
@@ -179,10 +178,7 @@
         </div>
         <details>
           <summary>View HTML</summary>
-          <pre><code>&lt;kbd&gt;Default&lt;/kbd&gt;
-&lt;kbd secondary&gt;Secondary&lt;/kbd&gt;
-&lt;kbd destructive&gt;Error&lt;/kbd&gt;
-&lt;kbd outline&gt;Outline&lt;/kbd&gt;</code></pre>
+          <pre><code></code></pre>
         </details>
       </section>
       <hr />
@@ -190,14 +186,13 @@
       <!-- 3. Tooltips -->
       <section stack>
         <h2>Tooltips</h2>
-        <div row style="padding: 2rem 0">
+        <div row>
           <button outline tooltip-top="Tooltip on top">Hover (top)</button>
           <button outline tooltip-bottom="Tooltip on bottom">Hover (bottom)</button>
         </div>
         <details>
           <summary>View HTML</summary>
-          <pre><code>&lt;button outline tooltip-top=&quot;Tooltip on top&quot;&gt;Hover (top)&lt;/button&gt;
-&lt;button outline tooltip-bottom=&quot;Tooltip on bottom&quot;&gt;Hover (bottom)&lt;/button&gt;</code></pre>
+          <pre><code></code></pre>
         </details>
       </section>
       <hr />
@@ -245,15 +240,7 @@
         </aside>
         <details>
           <summary>View HTML</summary>
-          <pre><code>&lt;aside&gt;
-  &lt;strong&gt;Heads up!&lt;/strong&gt;
-  &lt;p&gt;Your informational message here.&lt;/p&gt;
-&lt;/aside&gt;
-
-&lt;aside destructive&gt;
-  &lt;strong&gt;Error&lt;/strong&gt;
-  &lt;p&gt;Your error message here.&lt;/p&gt;
-&lt;/aside&gt;</code></pre>
+          <pre><code></code></pre>
         </details>
       </section>
       <hr />
@@ -317,27 +304,41 @@
             <h2>No items found</h2>
             <b>There are no patchable objects in the inventory</b>
           </article>
+          <article flush>
+            <header>
+              <h3>Recent Activity</h3>
+              <p>Your latest updates</p>
+            </header>
+            <section>Deployed v2.1.0 to production</section>
+            <section>Merged PR #42: Fix auth bug</section>
+            <section>Created branch feature/new-api</section>
+          </article>
+          <style>
+            article[flush] > details > p {
+              padding: calc(var(--spacing) * 3);
+            }
+          </style>
+          <article flush>
+            <header>
+              <h3>Settings</h3>
+            </header>
+            <details>
+              <summary>Appearance</summary>
+              <p>Customize the look and feel of the app.</p>
+            </details>
+            <details>
+              <summary>Notifications</summary>
+              <p>Configure how you receive alerts.</p>
+            </details>
+            <details>
+              <summary>Privacy</summary>
+              <p>Manage your data and permissions.</p>
+            </details>
+          </article>
         </div>
         <details>
           <summary>View HTML</summary>
-          <pre><code>&lt;article&gt;
-  &lt;header&gt;
-    &lt;h3&gt;Card Title&lt;/h3&gt;
-    &lt;p&gt;Card description.&lt;/p&gt;
-  &lt;/header&gt;
-  &lt;section&gt;
-    &lt;p&gt;Card content.&lt;/p&gt;
-  &lt;/section&gt;
-  &lt;footer&gt;
-    &lt;button outline&gt;Cancel&lt;/button&gt;
-    &lt;button&gt;Confirm&lt;/button&gt;
-  &lt;/footer&gt;
-&lt;/article&gt;
-
-&lt;article empty&gt;
-  &lt;h2&gt;No items found&lt;/h2&gt;
-  &lt;b&gt;Description text here&lt;/b&gt;
-&lt;/article&gt;</code></pre>
+          <pre><code></code></pre>
         </details>
       </section>
       <hr />
@@ -358,7 +359,7 @@
             </button>
           </div>
           <div role="tabpanel" id="demo-panel-account" aria-labelledby="demo-tab-account">
-            <div stack style="padding-top: 0.25rem">
+            <div stack>
               <div stack="xs">
                 <label for="demo-display-name">Display Name</label>
                 <input type="text" id="demo-display-name" placeholder="Your display name" value="Jane Doe" />
@@ -371,7 +372,7 @@
             </div>
           </div>
           <div role="tabpanel" id="demo-panel-password" aria-labelledby="demo-tab-password" hidden>
-            <div stack style="padding-top: 0.25rem">
+            <div stack>
               <div stack="xs">
                 <label for="demo-current-pw">Current Password</label>
                 <input type="password" id="demo-current-pw" placeholder="Enter current password" />
@@ -384,25 +385,16 @@
             </div>
           </div>
           <div role="tabpanel" id="demo-panel-billing" aria-labelledby="demo-tab-billing" hidden>
-            <div stack style="padding-top: 0.25rem">
+            <div stack>
               <p>Your current plan: <kbd>Pro</kbd></p>
               <progress value="75" max="100"></progress>
-              <p style="font-size: 0.875rem; color: var(--muted-foreground)">75% of storage used</p>
+              <p color="muted">75% of storage used</p>
             </div>
           </div>
         </div>
         <details>
           <summary>View HTML</summary>
-          <pre><code>&lt;div role=&quot;tablist&quot; aria-label=&quot;Account settings&quot;&gt;
-  &lt;button role=&quot;tab&quot; aria-selected=&quot;true&quot; aria-controls=&quot;panel-1&quot;&gt;Tab 1&lt;/button&gt;
-  &lt;button role=&quot;tab&quot; aria-selected=&quot;false&quot; aria-controls=&quot;panel-2&quot;&gt;Tab 2&lt;/button&gt;
-&lt;/div&gt;
-&lt;div role=&quot;tabpanel&quot; id=&quot;panel-1&quot;&gt;
-  &lt;p&gt;Panel 1 content&lt;/p&gt;
-&lt;/div&gt;
-&lt;div role=&quot;tabpanel&quot; id=&quot;panel-2&quot; hidden&gt;
-  &lt;p&gt;Panel 2 content&lt;/p&gt;
-&lt;/div&gt;</code></pre>
+          <pre><code></code></pre>
         </details>
       </section>
       <hr />
@@ -457,29 +449,7 @@
         </table>
         <details>
           <summary>View HTML</summary>
-          <pre><code>&lt;table&gt;
-  &lt;caption&gt;Recent invoices&lt;/caption&gt;
-  &lt;thead&gt;
-    &lt;tr&gt;
-      &lt;th&gt;Invoice&lt;/th&gt;
-      &lt;th&gt;Status&lt;/th&gt;
-      &lt;th align=&quot;right&quot;&gt;Amount&lt;/th&gt;
-    &lt;/tr&gt;
-  &lt;/thead&gt;
-  &lt;tbody&gt;
-    &lt;tr&gt;
-      &lt;td&gt;INV-001&lt;/td&gt;
-      &lt;td&gt;&lt;kbd&gt;Paid&lt;/kbd&gt;&lt;/td&gt;
-      &lt;td align=&quot;right&quot;&gt;$250.00&lt;/td&gt;
-    &lt;/tr&gt;
-  &lt;/tbody&gt;
-  &lt;tfoot&gt;
-    &lt;tr&gt;
-      &lt;td colspan=&quot;2&quot;&gt;Total&lt;/td&gt;
-      &lt;td align=&quot;right&quot;&gt;$1,200.00&lt;/td&gt;
-    &lt;/tr&gt;
-  &lt;/tfoot&gt;
-&lt;/table&gt;</code></pre>
+          <pre><code></code></pre>
         </details>
       </section>
       <hr />
@@ -487,7 +457,7 @@
       <!-- 8. Form Elements -->
       <section stack>
         <h2>Form Elements</h2>
-        <div grid style="gap: 1.5rem">
+        <div grid>
           <fieldset>
             <legend>Contact Details</legend>
             <div stack>
@@ -507,10 +477,18 @@
                 <label for="demo-disabled-input">Disabled</label>
                 <input type="text" id="demo-disabled-input" placeholder="Disabled" disabled />
               </div>
+              <div stack="xs">
+                <label for="demo-small-input">Small Input</label>
+                <input type="text" sm id="demo-small-input" placeholder="Compact" />
+              </div>
+              <div stack="xs">
+                <label for="demo-number">Quantity</label>
+                <input type="number" id="demo-number" value="3" min="0" max="99" />
+              </div>
             </div>
           </fieldset>
 
-          <div stack="lg" style="align-content: start">
+          <div stack="lg">
             <div stack="xs">
               <label for="demo-select">Select</label>
               <select id="demo-select">
@@ -527,7 +505,7 @@
             </div>
           </div>
 
-          <div stack="lg" style="align-content: start">
+          <div stack="lg">
             <fieldset plain>
               <legend>Notification Preferences</legend>
               <div stack>
@@ -562,23 +540,7 @@
         </div>
         <details>
           <summary>View HTML</summary>
-          <pre><code>&lt;label for=&quot;name&quot;&gt;Name&lt;/label&gt;
-&lt;input type=&quot;text&quot; id=&quot;name&quot; placeholder=&quot;John&quot; /&gt;
-
-&lt;input type=&quot;text&quot; aria-invalid=&quot;true&quot; value=&quot;Bad input&quot; /&gt;
-
-&lt;select&gt;
-  &lt;option value=&quot;&quot; disabled selected&gt;Choose...&lt;/option&gt;
-  &lt;option value=&quot;a&quot;&gt;Option A&lt;/option&gt;
-&lt;/select&gt;
-
-&lt;textarea placeholder=&quot;Write something...&quot;&gt;&lt;/textarea&gt;
-
-&lt;input type=&quot;radio&quot; name=&quot;group&quot; id=&quot;opt1&quot; /&gt;
-&lt;label for=&quot;opt1&quot;&gt;Option 1&lt;/label&gt;
-
-&lt;input type=&quot;checkbox&quot; role=&quot;switch&quot; id=&quot;toggle&quot; /&gt;
-&lt;label for=&quot;toggle&quot;&gt;Toggle&lt;/label&gt;</code></pre>
+          <pre><code></code></pre>
         </details>
       </section>
       <hr />
@@ -600,16 +562,20 @@
             <p>The chevron rotates on open/close with a CSS transition.</p>
           </details>
         </div>
+        <h3><code>[left]</code> variant</h3>
+        <div max-w="md">
+          <details left open>
+            <summary>Left-aligned chevron</summary>
+            <p>The chevron appears on the left side instead of the right.</p>
+          </details>
+          <details left>
+            <summary>Another item</summary>
+            <p>Useful for navigation-style accordions.</p>
+          </details>
+        </div>
         <details>
           <summary>View HTML</summary>
-          <pre><code>&lt;details open&gt;
-  &lt;summary&gt;Is it accessible?&lt;/summary&gt;
-  &lt;p&gt;Yes. It adheres to the WAI-ARIA design pattern.&lt;/p&gt;
-&lt;/details&gt;
-&lt;details&gt;
-  &lt;summary&gt;Is it styled?&lt;/summary&gt;
-  &lt;p&gt;Yes. It comes with default styles.&lt;/p&gt;
-&lt;/details&gt;</code></pre>
+          <pre><code></code></pre>
         </details>
       </section>
       <hr />
@@ -625,10 +591,7 @@
         </div>
         <details>
           <summary>View HTML</summary>
-          <pre><code>&lt;progress value=&quot;25&quot; max=&quot;100&quot;&gt;&lt;/progress&gt;
-&lt;progress value=&quot;60&quot; max=&quot;100&quot;&gt;&lt;/progress&gt;
-&lt;progress value=&quot;100&quot; max=&quot;100&quot;&gt;&lt;/progress&gt;
-&lt;progress&gt;&lt;/progress&gt;</code></pre>
+          <pre><code></code></pre>
         </details>
       </section>
       <hr />
@@ -637,7 +600,7 @@
       <section stack>
         <h2>Dialog</h2>
         <div>
-          <button data-open-dialog="demo-dialog" outline>Open Dialog</button>
+          <button commandfor="demo-dialog" command="show-modal" outline>Open Dialog</button>
           <dialog id="demo-dialog">
             <header>
               <h3>Are you sure?</h3>
@@ -646,28 +609,17 @@
             <section>
               <p>This will permanently delete the selected items and remove all associated data.</p>
             </section>
-            <footer>
-              <button outline data-close-dialog>Cancel</button>
-              <button destructive data-close-dialog>Delete</button>
-            </footer>
+            <form method="dialog">
+              <footer>
+                <button outline>Cancel</button>
+                <button destructive>Delete</button>
+              </footer>
+            </form>
           </dialog>
         </div>
         <details>
           <summary>View HTML</summary>
-          <pre><code>&lt;button data-open-dialog=&quot;my-dialog&quot;&gt;Open Dialog&lt;/button&gt;
-&lt;dialog id=&quot;my-dialog&quot;&gt;
-  &lt;header&gt;
-    &lt;h3&gt;Are you sure?&lt;/h3&gt;
-    &lt;p&gt;This action cannot be undone.&lt;/p&gt;
-  &lt;/header&gt;
-  &lt;section&gt;
-    &lt;p&gt;Dialog content here.&lt;/p&gt;
-  &lt;/section&gt;
-  &lt;footer&gt;
-    &lt;button outline data-close-dialog&gt;Cancel&lt;/button&gt;
-    &lt;button destructive data-close-dialog&gt;Delete&lt;/button&gt;
-  &lt;/footer&gt;
-&lt;/dialog&gt;</code></pre>
+          <pre><code></code></pre>
         </details>
       </section>
       <hr />
@@ -679,56 +631,91 @@
           <button aria-busy="true">Loading</button>
           <button secondary aria-busy="true">Loading</button>
         </div>
-        <article aria-busy="true" max-w style="min-height: 8rem">
+        <article aria-busy="true" max-w>
           <header><h3>Loading...</h3></header>
         </article>
         <details>
           <summary>View HTML</summary>
-          <pre><code>&lt;button aria-busy=&quot;true&quot;&gt;Loading&lt;/button&gt;
-
-&lt;article aria-busy=&quot;true&quot;&gt;
-  &lt;header&gt;&lt;h3&gt;Loading...&lt;/h3&gt;&lt;/header&gt;
-&lt;/article&gt;</code></pre>
+          <pre><code></code></pre>
         </details>
       </section>
       <hr />
 
-      <!-- 13. Layout Utilities -->
+      <!-- 13. Log -->
+      <section stack>
+        <h2>Log</h2>
+        <article max-w>
+          <header>
+            <h3>Build Output</h3>
+          </header>
+          <section>
+            <samp>
+              <p>Compiling slick.css...</p>
+              <p>Optimized: 46373 → 41657 bytes</p>
+              <p>Minifying with lightningcss...</p>
+              <p>Done in 131ms</p>
+            </samp>
+          </section>
+        </article>
+        <details>
+          <summary>View HTML</summary>
+          <pre><code></code></pre>
+        </details>
+      </section>
+      <hr />
+
+      <!-- 14. Layout Utilities -->
       <section stack>
         <h2>Layout Utilities</h2>
 
         <h3><code>[stack]</code></h3>
-        <div stack style="max-width: 20rem">
-          <div style="background: var(--secondary); padding: 0.5rem 1rem; border-radius: var(--radius)">Item 1</div>
-          <div style="background: var(--secondary); padding: 0.5rem 1rem; border-radius: var(--radius)">Item 2</div>
-          <div style="background: var(--secondary); padding: 0.5rem 1rem; border-radius: var(--radius)">Item 3</div>
+        <div stack max-w="xs">
+          <kbd secondary>Item 1</kbd>
+          <kbd secondary>Item 2</kbd>
+          <kbd secondary>Item 3</kbd>
         </div>
 
         <h3><code>[row]</code></h3>
         <div row>
-          <div style="background: var(--secondary); padding: 0.5rem 1rem; border-radius: var(--radius)">Item 1</div>
-          <div style="background: var(--secondary); padding: 0.5rem 1rem; border-radius: var(--radius)">Item 2</div>
-          <div style="background: var(--secondary); padding: 0.5rem 1rem; border-radius: var(--radius)">Item 3</div>
+          <kbd secondary>Item 1</kbd>
+          <kbd secondary>Item 2</kbd>
+          <kbd secondary>Item 3</kbd>
         </div>
 
         <h3><code>[grid]</code></h3>
         <div grid>
-          <div style="background: var(--secondary); padding: 0.5rem 1rem; border-radius: var(--radius)">Item 1</div>
-          <div style="background: var(--secondary); padding: 0.5rem 1rem; border-radius: var(--radius)">Item 2</div>
-          <div style="background: var(--secondary); padding: 0.5rem 1rem; border-radius: var(--radius)">Item 3</div>
+          <kbd secondary>Item 1</kbd>
+          <kbd secondary>Item 2</kbd>
+          <kbd secondary>Item 3</kbd>
         </div>
 
         <h3><code>[max-w]</code></h3>
-        <div max-w style="background: var(--secondary); padding: 0.5rem 1rem; border-radius: var(--radius)">
-          Constrained to max-width
+        <div max-w>
+          <kbd secondary>Constrained to max-width</kbd>
+        </div>
+
+        <h3><code>[color]</code></h3>
+        <div row>
+          <p color="destructive">Destructive text</p>
+          <p color="success">Success text</p>
+          <p color="muted">Muted text</p>
+        </div>
+
+        <h3><code>[spacer]</code></h3>
+        <div row>
+          <button sm outline>Left</button>
+          <div spacer></div>
+          <button sm outline>Right</button>
+        </div>
+
+        <h3><code>[truncate]</code></h3>
+        <div max-w="xs">
+          <p truncate>This is a very long piece of text that will be truncated with an ellipsis when it overflows.</p>
         </div>
 
         <details>
           <summary>View HTML</summary>
-          <pre><code>&lt;div stack&gt;...&lt;/div&gt;
-&lt;div row&gt;...&lt;/div&gt;
-&lt;div grid&gt;...&lt;/div&gt;
-&lt;div max-w&gt;...&lt;/div&gt;</code></pre>
+          <pre><code></code></pre>
         </details>
       </section>
 
@@ -737,7 +724,7 @@
       <section stack>
         <h2>Theme Variables</h2>
         <p>Copy these CSS custom properties to customize Slick CSS in your project.</p>
-        <pre style="position: relative"><code id="theme-vars-output"></code></pre>
+        <pre><code id="theme-vars-output"></code></pre>
       </section>
 
       <!-- Footer -->
@@ -747,59 +734,259 @@
     </div>
 
     <script>
-      const themes = {
-        zinc: null,
-        blue: {
-          "--primary": "oklch(0.593 0.204 264.376)",
-          "--primary-foreground": "oklch(0.98 0.016 263.684)",
-          "--ring": "oklch(0.593 0.204 264.376)",
+      // Base themes, full dark-mode variable sets
+      const baseThemes = {
+        neutral: null,
+        stone: {
+          "--background": "oklch(0.147 0.004 49.25)",
+          "--foreground": "oklch(0.985 0.001 106.423)",
+          "--card": "oklch(0.216 0.006 56.043)",
+          "--card-foreground": "oklch(0.985 0.001 106.423)",
+          "--primary": "oklch(0.923 0.003 48.717)",
+          "--primary-foreground": "oklch(0.216 0.006 56.043)",
+          "--secondary": "oklch(0.268 0.007 34.298)",
+          "--secondary-foreground": "oklch(0.985 0.001 106.423)",
+          "--muted": "oklch(0.268 0.007 34.298)",
+          "--muted-foreground": "oklch(0.709 0.01 56.259)",
+          "--destructive": "oklch(0.704 0.191 22.216)",
+          "--border": "oklch(1 0 0 / 10%)",
+          "--input": "oklch(1 0 0 / 15%)",
+          "--ring": "oklch(0.553 0.013 58.071)",
         },
-        green: {
-          "--primary": "oklch(0.627 0.164 164.36)",
-          "--primary-foreground": "oklch(0.98 0.016 166.105)",
-          "--ring": "oklch(0.627 0.164 164.36)",
+        zinc: {
+          "--background": "oklch(0.141 0.005 285.823)",
+          "--foreground": "oklch(0.985 0 0)",
+          "--card": "oklch(0.21 0.006 285.885)",
+          "--card-foreground": "oklch(0.985 0 0)",
+          "--primary": "oklch(0.92 0.004 286.32)",
+          "--primary-foreground": "oklch(0.21 0.006 285.885)",
+          "--secondary": "oklch(0.274 0.006 286.033)",
+          "--secondary-foreground": "oklch(0.985 0 0)",
+          "--muted": "oklch(0.274 0.006 286.033)",
+          "--muted-foreground": "oklch(0.705 0.015 286.067)",
+          "--destructive": "oklch(0.704 0.191 22.216)",
+          "--border": "oklch(1 0 0 / 10%)",
+          "--input": "oklch(1 0 0 / 15%)",
+          "--ring": "oklch(0.552 0.016 285.938)",
         },
-        rose: {
-          "--primary": "oklch(0.645 0.246 16.439)",
-          "--primary-foreground": "oklch(0.969 0.015 12.422)",
-          "--ring": "oklch(0.645 0.246 16.439)",
+        mauve: {
+          "--background": "oklch(0.145 0.008 326)",
+          "--foreground": "oklch(0.985 0 0)",
+          "--card": "oklch(0.212 0.019 322.12)",
+          "--card-foreground": "oklch(0.985 0 0)",
+          "--primary": "oklch(0.922 0.005 325.62)",
+          "--primary-foreground": "oklch(0.212 0.019 322.12)",
+          "--secondary": "oklch(0.263 0.024 320.12)",
+          "--secondary-foreground": "oklch(0.985 0 0)",
+          "--muted": "oklch(0.263 0.024 320.12)",
+          "--muted-foreground": "oklch(0.711 0.019 323.02)",
+          "--destructive": "oklch(0.704 0.191 22.216)",
+          "--border": "oklch(1 0 0 / 10%)",
+          "--input": "oklch(1 0 0 / 15%)",
+          "--ring": "oklch(0.542 0.034 322.5)",
         },
-        orange: {
-          "--primary": "oklch(0.69 0.204 70.746)",
-          "--primary-foreground": "oklch(0.985 0.008 70.746)",
-          "--ring": "oklch(0.69 0.204 70.746)",
+        olive: {
+          "--background": "oklch(0.153 0.006 107.1)",
+          "--foreground": "oklch(0.988 0.003 106.5)",
+          "--card": "oklch(0.228 0.013 107.4)",
+          "--card-foreground": "oklch(0.988 0.003 106.5)",
+          "--primary": "oklch(0.93 0.007 106.5)",
+          "--primary-foreground": "oklch(0.228 0.013 107.4)",
+          "--secondary": "oklch(0.286 0.016 107.4)",
+          "--secondary-foreground": "oklch(0.988 0.003 106.5)",
+          "--muted": "oklch(0.286 0.016 107.4)",
+          "--muted-foreground": "oklch(0.737 0.021 106.9)",
+          "--destructive": "oklch(0.704 0.191 22.216)",
+          "--border": "oklch(1 0 0 / 10%)",
+          "--input": "oklch(1 0 0 / 15%)",
+          "--ring": "oklch(0.58 0.031 107.3)",
         },
-        violet: {
-          "--primary": "oklch(0.627 0.265 303.9)",
-          "--primary-foreground": "oklch(0.98 0.016 303.684)",
-          "--ring": "oklch(0.627 0.265 303.9)",
+        mist: {
+          "--background": "oklch(0.148 0.004 228.8)",
+          "--foreground": "oklch(0.987 0.002 197.1)",
+          "--card": "oklch(0.218 0.008 223.9)",
+          "--card-foreground": "oklch(0.987 0.002 197.1)",
+          "--primary": "oklch(0.925 0.005 214.3)",
+          "--primary-foreground": "oklch(0.218 0.008 223.9)",
+          "--secondary": "oklch(0.275 0.011 216.9)",
+          "--secondary-foreground": "oklch(0.987 0.002 197.1)",
+          "--muted": "oklch(0.275 0.011 216.9)",
+          "--muted-foreground": "oklch(0.723 0.014 214.4)",
+          "--destructive": "oklch(0.704 0.191 22.216)",
+          "--border": "oklch(1 0 0 / 10%)",
+          "--input": "oklch(1 0 0 / 15%)",
+          "--ring": "oklch(0.56 0.021 213.5)",
+        },
+        taupe: {
+          "--background": "oklch(0.147 0.004 49.3)",
+          "--foreground": "oklch(0.986 0.002 67.8)",
+          "--card": "oklch(0.214 0.009 43.1)",
+          "--card-foreground": "oklch(0.986 0.002 67.8)",
+          "--primary": "oklch(0.922 0.005 34.3)",
+          "--primary-foreground": "oklch(0.214 0.009 43.1)",
+          "--secondary": "oklch(0.268 0.011 36.5)",
+          "--secondary-foreground": "oklch(0.986 0.002 67.8)",
+          "--muted": "oklch(0.268 0.011 36.5)",
+          "--muted-foreground": "oklch(0.714 0.014 41.2)",
+          "--destructive": "oklch(0.704 0.191 22.216)",
+          "--border": "oklch(1 0 0 / 10%)",
+          "--input": "oklch(1 0 0 / 15%)",
+          "--ring": "oklch(0.547 0.021 43.1)",
         },
       };
 
+      // Color themes, partial overrides (primary, primary-foreground, ring)
+      const colorThemes = {
+        default: null,
+        amber: {
+          "--primary": "oklch(0.473 0.137 46.201)",
+          "--primary-foreground": "oklch(0.987 0.022 95.277)",
+          "--ring": "oklch(0.473 0.137 46.201)",
+        },
+        blue: {
+          "--primary": "oklch(0.424 0.199 265.638)",
+          "--primary-foreground": "oklch(0.97 0.014 254.604)",
+          "--ring": "oklch(0.424 0.199 265.638)",
+        },
+        cyan: {
+          "--primary": "oklch(0.45 0.085 224.283)",
+          "--primary-foreground": "oklch(0.984 0.019 200.873)",
+          "--ring": "oklch(0.45 0.085 224.283)",
+        },
+        emerald: {
+          "--primary": "oklch(0.432 0.095 166.913)",
+          "--primary-foreground": "oklch(0.979 0.021 166.113)",
+          "--ring": "oklch(0.432 0.095 166.913)",
+        },
+        fuchsia: {
+          "--primary": "oklch(0.452 0.211 324.591)",
+          "--primary-foreground": "oklch(0.977 0.017 320.058)",
+          "--ring": "oklch(0.452 0.211 324.591)",
+        },
+        green: {
+          "--primary": "oklch(0.453 0.124 130.933)",
+          "--primary-foreground": "oklch(0.986 0.031 120.757)",
+          "--ring": "oklch(0.453 0.124 130.933)",
+        },
+        indigo: {
+          "--primary": "oklch(0.398 0.195 277.366)",
+          "--primary-foreground": "oklch(0.962 0.018 272.314)",
+          "--ring": "oklch(0.398 0.195 277.366)",
+        },
+        lime: {
+          "--primary": "oklch(0.453 0.124 130.933)",
+          "--primary-foreground": "oklch(0.986 0.031 120.757)",
+          "--ring": "oklch(0.453 0.124 130.933)",
+        },
+        orange: {
+          "--primary": "oklch(0.47 0.157 37.304)",
+          "--primary-foreground": "oklch(0.98 0.016 73.684)",
+          "--ring": "oklch(0.47 0.157 37.304)",
+        },
+        pink: {
+          "--primary": "oklch(0.459 0.187 3.815)",
+          "--primary-foreground": "oklch(0.971 0.014 343.198)",
+          "--ring": "oklch(0.459 0.187 3.815)",
+        },
+        purple: {
+          "--primary": "oklch(0.438 0.218 303.724)",
+          "--primary-foreground": "oklch(0.977 0.014 308.299)",
+          "--ring": "oklch(0.438 0.218 303.724)",
+        },
+        red: {
+          "--primary": "oklch(0.444 0.177 26.899)",
+          "--primary-foreground": "oklch(0.971 0.013 17.38)",
+          "--ring": "oklch(0.444 0.177 26.899)",
+        },
+        rose: {
+          "--primary": "oklch(0.455 0.188 13.697)",
+          "--primary-foreground": "oklch(0.969 0.015 12.422)",
+          "--ring": "oklch(0.455 0.188 13.697)",
+        },
+        sky: {
+          "--primary": "oklch(0.443 0.11 240.79)",
+          "--primary-foreground": "oklch(0.977 0.013 236.62)",
+          "--ring": "oklch(0.443 0.11 240.79)",
+        },
+        teal: {
+          "--primary": "oklch(0.437 0.078 188.216)",
+          "--primary-foreground": "oklch(0.984 0.014 180.72)",
+          "--ring": "oklch(0.437 0.078 188.216)",
+        },
+        violet: {
+          "--primary": "oklch(0.432 0.232 292.759)",
+          "--primary-foreground": "oklch(0.969 0.016 293.756)",
+          "--ring": "oklch(0.432 0.232 292.759)",
+        },
+        yellow: {
+          "--primary": "oklch(0.795 0.184 86.047)",
+          "--primary-foreground": "oklch(0.421 0.095 57.708)",
+          "--ring": "oklch(0.795 0.184 86.047)",
+        },
+      };
+
+      const allVars = [
+        "--background",
+        "--foreground",
+        "--card",
+        "--card-foreground",
+        "--primary",
+        "--primary-foreground",
+        "--secondary",
+        "--secondary-foreground",
+        "--muted",
+        "--muted-foreground",
+        "--destructive",
+        "--destructive-foreground",
+        "--border",
+        "--input",
+        "--ring",
+      ];
+
       const root = document.documentElement;
-      const themeButtons = document.querySelectorAll("[data-theme]");
+      const baseButtons = document.querySelectorAll("[data-base]");
+      const colorButtons = document.querySelectorAll("[data-color]");
       const radiusButtons = document.querySelectorAll("[data-radius]");
 
-      function setActiveTheme(name) {
-        const vars = themes[name];
+      let currentBase = "neutral";
+      let currentColor = "default";
 
-        if (vars === null) {
-          root.style.removeProperty("--primary");
-          root.style.removeProperty("--primary-foreground");
-          root.style.removeProperty("--ring");
-        } else {
-          Object.entries(vars).forEach(([prop, value]) => {
-            root.style.setProperty(prop, value);
-          });
+      function applyTheme() {
+        const base = baseThemes[currentBase];
+
+        // First clear all vars
+        allVars.forEach((v) => root.style.removeProperty(v));
+
+        // Apply base (if not neutral, which falls back to CSS defaults)
+        if (base) {
+          Object.entries(base).forEach(([k, v]) => root.style.setProperty(k, v));
         }
 
-        themeButtons.forEach((btn) => {
-          if (btn.dataset.theme === name) {
+        // Overlay color (if not default)
+        const color = colorThemes[currentColor];
+        if (color) {
+          Object.entries(color).forEach(([k, v]) => root.style.setProperty(k, v));
+        }
+
+        // Update active button styling base
+        baseButtons.forEach((btn) => {
+          if (btn.dataset.base === currentBase) {
             btn.style.border = "2px solid var(--primary)";
           } else {
             btn.style.border = "2px solid transparent";
           }
         });
+
+        // Update active button styling color
+        colorButtons.forEach((btn) => {
+          if (btn.dataset.color === currentColor) {
+            btn.style.border = "2px solid var(--primary)";
+          } else {
+            btn.style.border = "2px solid transparent";
+          }
+        });
+
+        requestAnimationFrame(updateThemeVarsDisplay);
       }
 
       function setActiveRadius(value) {
@@ -814,10 +1001,22 @@
             btn.style.outlineOffset = "0";
           }
         });
+
+        requestAnimationFrame(updateThemeVarsDisplay);
       }
 
-      themeButtons.forEach((btn) => {
-        btn.addEventListener("click", () => setActiveTheme(btn.dataset.theme));
+      baseButtons.forEach((btn) => {
+        btn.addEventListener("click", () => {
+          currentBase = btn.dataset.base;
+          applyTheme();
+        });
+      });
+
+      colorButtons.forEach((btn) => {
+        btn.addEventListener("click", () => {
+          currentColor = btn.dataset.color;
+          applyTheme();
+        });
       });
 
       radiusButtons.forEach((btn) => {
@@ -839,13 +1038,27 @@
         });
       });
 
-      // Dialog wiring
-      document.querySelectorAll("[data-open-dialog]").forEach((btn) => {
-        const dialog = document.querySelector("#" + btn.dataset.openDialog);
-        btn.addEventListener("click", () => dialog?.showModal());
-      });
-      document.querySelectorAll("[data-close-dialog]").forEach((btn) => {
-        btn.addEventListener("click", () => btn.closest("dialog")?.close());
+      // Populate "View HTML" code blocks from section demo content
+      function dedent(html) {
+        const lines = html.split("\n");
+        const indented = lines.filter((l) => l.trim() && /^\s/.test(l));
+        const strip = indented.length ? Math.min(...indented.map((l) => l.match(/^\s*/)[0].length)) : 0;
+        return lines
+          .map((l) => l.slice(Math.min(strip, l.match(/^\s*/)[0].length)))
+          .join("\n")
+          .trim();
+      }
+      document.querySelectorAll("details").forEach((details) => {
+        const summary = details.querySelector(":scope > summary");
+        if (!summary || summary.textContent.trim() !== "View HTML") return;
+        const code = details.querySelector("pre code");
+        if (!code) return;
+        const section = details.parentElement;
+        const html = Array.from(section.children)
+          .filter((el) => !el.matches("h2, h3, details, hr"))
+          .map((el) => el.outerHTML)
+          .join("\n\n");
+        code.textContent = dedent(html);
       });
 
       // Copy-to-clipboard on code blocks
@@ -878,8 +1091,8 @@
           "--secondary-foreground",
           "--muted",
           "--muted-foreground",
-          "--destructive",
-          "--destructive-foreground",
+          "--success",
+          "--success-foreground",
           "--border",
           "--input",
           "--ring",
@@ -890,20 +1103,8 @@
         if (el) el.textContent = output;
       }
 
-      // Patch theme/radius setters to also update vars display
-      const _origSetTheme = setActiveTheme;
-      setActiveTheme = function (name) {
-        _origSetTheme(name);
-        requestAnimationFrame(updateThemeVarsDisplay);
-      };
-      const _origSetRadius = setActiveRadius;
-      setActiveRadius = function (value) {
-        _origSetRadius(value);
-        requestAnimationFrame(updateThemeVarsDisplay);
-      };
-
       // Set defaults on page load
-      setActiveTheme("zinc");
+      applyTheme();
       setActiveRadius("0.625rem");
     </script>
   </body>
