@@ -40,10 +40,10 @@ Or the static (smaller) variant:
 
 | File                   | Size     | Gzip    | Description                                         |
 | ---------------------- | -------- | ------- | --------------------------------------------------- |
-| `slick.css`            | ~46.5 KB | ~6.7 KB | Readable, full Tailwind var compatibility           |
-| `slick.min.css`        | ~36.8 KB | ~6.1 KB | Minified, full Tailwind var compatibility (default) |
-| `slick-static.css`     | ~41.9 KB | ~6.2 KB | Readable, dead `--tw-*` vars removed                |
-| `slick-static.min.css` | ~33.0 KB | ~5.7 KB | Minified, smallest size                             |
+| `slick.css`            | ~46.8 KB | ~6.7 KB | Readable, full Tailwind var compatibility           |
+| `slick.min.css`        | ~37.0 KB | ~6.1 KB | Minified, full Tailwind var compatibility (default) |
+| `slick-static.css`     | ~42.2 KB | ~6.2 KB | Readable, dead `--tw-*` vars removed                |
+| `slick-static.min.css` | ~33.1 KB | ~5.7 KB | Minified, smallest size                             |
 
 <!-- /variants -->
 
