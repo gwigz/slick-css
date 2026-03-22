@@ -430,7 +430,6 @@
     --tw-font-weight: var(--font-weight-medium);
     font-weight: var(--font-weight-medium);
     white-space: nowrap;
-    text-transform: uppercase;
     background-color: var(--primary);
     color: var(--primary-foreground);
   }
@@ -689,7 +688,7 @@
     flex-shrink: 0;
     cursor: pointer;
     appearance: none;
-    border-radius: var(--radius);
+    border-radius: calc(var(--radius) * 0.6);
     border-style: var(--tw-border-style);
     border-width: 1px;
     border-color: var(--input);
