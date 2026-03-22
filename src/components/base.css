@@ -57,6 +57,8 @@
 
   pre {
     @apply overflow-x-auto rounded-lg bg-muted p-4;
+
+    min-width: 0;
   }
 
   pre code {
