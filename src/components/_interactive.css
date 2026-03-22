@@ -1,0 +1,50 @@
+@layer components {
+  /* Shared focus ring for interactive elements */
+  :is(
+    button,
+    [type="submit"],
+    [type="reset"],
+    [role="button"],
+    input:not([role="switch"]),
+    textarea,
+    select,
+    [role="tab"]
+  ):focus-visible {
+    @apply border-ring ring-3 ring-ring/50;
+  }
+
+  /* Toggle switch - ring only, no border highlight */
+  input[type="checkbox"][role="switch"]:focus-visible {
+    @apply ring-3 ring-ring/50;
+  }
+
+  /* Details summary - includes rounded corners */
+  details > summary:focus-visible {
+    @apply rounded-lg border-ring ring-3 ring-ring/50;
+  }
+
+  /* Shared aria-invalid border for form elements */
+  :is(
+    button,
+    [type="submit"],
+    [type="reset"],
+    [role="button"],
+    input:not([role="switch"]),
+    textarea,
+    select
+  )[aria-invalid="true"] {
+    @apply border-destructive/50;
+  }
+
+  :is(
+    button,
+    [type="submit"],
+    [type="reset"],
+    [role="button"],
+    input:not([role="switch"]),
+    textarea,
+    select
+  )[aria-invalid="true"]:focus-visible {
+    @apply border-destructive/50 ring-3 ring-destructive/40;
+  }
+}

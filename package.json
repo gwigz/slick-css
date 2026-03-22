@@ -1,0 +1,49 @@
+{
+  "name": "@gwigz/slick-css",
+  "version": "0.1.0",
+  "license": "MIT",
+  "style": "dist/slick.min.css",
+  "files": [
+    "dist"
+  ],
+  "type": "module",
+  "exports": {
+    ".": "./dist/slick.min.css",
+    "./slick.css": "./dist/slick.css",
+    "./slick.min.css": "./dist/slick.min.css",
+    "./static": "./dist/slick-static.min.css",
+    "./slick-static.css": "./dist/slick-static.css",
+    "./slick-static.min.css": "./dist/slick-static.min.css"
+  },
+  "scripts": {
+    "build": "bunx @tailwindcss/cli -i src/slick.css -o dist/slick.css && cp dist/slick.css dist/slick-static.css && bun scripts/optimize-css.ts dist/slick-static.css && bunx lightningcss --minify dist/slick.css -o dist/slick.min.css && bunx lightningcss --minify dist/slick-static.css -o dist/slick-static.min.css && bun scripts/update-readme-sizes.ts && bunx oxfmt --write README.md",
+    "dev": "bunx @tailwindcss/cli -i src/slick.css -o dist/slick.css --watch",
+    "storybook": "storybook dev -p 6006",
+    "build-storybook": "storybook build",
+    "lint": "oxlint",
+    "lint:fix": "oxlint --fix",
+    "lint:css": "stylelint 'src/**/*.css'",
+    "lint:css:fix": "stylelint 'src/**/*.css' --fix",
+    "fmt": "oxfmt --write .",
+    "fmt:check": "oxfmt --check .",
+    "prepare": "husky"
+  },
+  "devDependencies": {
+    "@storybook/addon-docs": "10.3.1",
+    "@storybook/html": "^10.3.1",
+    "@storybook/html-vite": "^10.3.1",
+    "@stylistic/stylelint-config": "^4.0.0",
+    "@tailwindcss/cli": "^4.2.2",
+    "@types/bun": "^1.3.11",
+    "husky": "^9.1.7",
+    "lightningcss-cli": "^1.32.0",
+    "lucide": "^0.577.0",
+    "oxfmt": "^0.41.0",
+    "oxlint": "^1.56.0",
+    "storybook": "^10.3.1",
+    "stylelint": "^17.5.0",
+    "stylelint-config-standard": "^40.0.0",
+    "tailwindcss": "^4.2.2",
+    "vite": "^8.0.1"
+  }
+}

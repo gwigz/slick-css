@@ -1,0 +1,42 @@
+@layer components {
+  /* Wrap table in a div with overflow-x-auto for horizontal scrolling on small screens */
+  table {
+    @apply w-full caption-bottom text-sm;
+  }
+
+  thead tr {
+    @apply border-b;
+  }
+
+  tbody tr:last-child {
+    @apply border-0;
+  }
+
+  tfoot {
+    @apply border-t bg-muted/50 font-medium;
+
+    & tr:last-child {
+      @apply border-b-0;
+    }
+  }
+
+  tr {
+    @apply border-b transition-all;
+
+    &:hover {
+      @apply bg-muted/50;
+    }
+  }
+
+  th {
+    @apply h-10 px-2 text-left align-middle font-medium whitespace-nowrap text-foreground;
+  }
+
+  td {
+    @apply p-2 align-middle whitespace-nowrap;
+  }
+
+  caption {
+    @apply mt-4 text-sm text-muted-foreground;
+  }
+}

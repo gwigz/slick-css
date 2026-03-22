@@ -1,0 +1,17 @@
+@layer components {
+  fieldset {
+    @apply rounded-lg border border-border p-4;
+  }
+
+  legend {
+    @apply px-2 text-sm font-medium text-foreground;
+  }
+
+  fieldset[plain] {
+    @apply border-none p-0;
+  }
+
+  fieldset[plain] > legend {
+    @apply mb-2 px-0;
+  }
+}

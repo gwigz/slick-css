@@ -1,0 +1,37 @@
+@layer components {
+  [tooltip-top],
+  [tooltip-bottom] {
+    position: relative;
+  }
+
+  [tooltip-top]::before,
+  [tooltip-bottom]::before {
+    @apply pointer-events-none absolute z-50 rounded-md bg-foreground px-3 py-1.5 text-xs text-background;
+
+    content: attr(tooltip-top);
+    white-space: nowrap;
+    opacity: 0;
+    transition: opacity 0.15s;
+  }
+
+  [tooltip-bottom]::before {
+    content: attr(tooltip-bottom);
+  }
+
+  [tooltip-top]::before {
+    bottom: calc(100% + 6px);
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  [tooltip-bottom]::before {
+    top: calc(100% + 6px);
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  [tooltip-top]:hover::before,
+  [tooltip-bottom]:hover::before {
+    opacity: 1;
+  }
+}

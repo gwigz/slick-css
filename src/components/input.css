@@ -1,0 +1,18 @@
+@layer components {
+  input:not([type="checkbox"], [type="radio"], [role="switch"]),
+  textarea {
+    @apply h-8 w-full min-w-0 rounded-lg border border-input bg-input/30 px-2.5 py-1 text-sm text-foreground transition-all outline-none;
+
+    &::placeholder {
+      @apply text-muted-foreground;
+    }
+
+    &:disabled {
+      @apply pointer-events-none cursor-not-allowed bg-input/80 opacity-50;
+    }
+  }
+
+  textarea {
+    @apply h-auto min-h-16 py-2;
+  }
+}

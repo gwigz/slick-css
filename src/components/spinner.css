@@ -1,0 +1,61 @@
+@layer components {
+  /* Button spinner - replaces text with a centered spinning ring */
+  button[aria-busy="true"],
+  [type="submit"][aria-busy="true"],
+  [type="reset"][aria-busy="true"],
+  [role="button"][aria-busy="true"] {
+    @apply pointer-events-none relative;
+
+    color: transparent !important;
+
+    &::after {
+      content: "";
+
+      @apply absolute;
+
+      width: 1rem;
+      height: 1rem;
+      top: 50%;
+      left: 50%;
+      margin-top: -0.5rem;
+      margin-left: -0.5rem;
+      border: 2px solid var(--primary-foreground);
+      border-top-color: transparent;
+      border-radius: 50%;
+      animation: spin 0.6s linear infinite;
+    }
+  }
+
+  /* Secondary, outline, ghost - use foreground color for spinner */
+  :is(button, [type="submit"], [type="reset"], [role="button"]):is([secondary], [outline], [ghost])[aria-busy="true"] {
+    &::after {
+      border-color: var(--foreground);
+      border-top-color: transparent;
+    }
+  }
+
+  /* Destructive - use destructive color for spinner */
+  :is(button, [type="submit"], [type="reset"], [role="button"])[destructive][aria-busy="true"] {
+    &::after {
+      border-color: var(--destructive);
+      border-top-color: transparent;
+    }
+  }
+
+  /* Generic element spinner - subtle pulse for non-button busy elements */
+  [aria-busy="true"]:not(button, [type="submit"], [type="reset"], [role="button"]) {
+    animation: pulse 2s ease-in-out infinite;
+  }
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes pulse {
+  50% {
+    opacity: 0.5;
+  }
+}

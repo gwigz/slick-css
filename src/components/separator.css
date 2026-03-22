@@ -1,0 +1,5 @@
+@layer components {
+  hr {
+    @apply my-4 h-px w-full shrink-0 border-none bg-border;
+  }
+}

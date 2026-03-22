@@ -1,0 +1,25 @@
+@layer components {
+  [role="tablist"] {
+    @apply inline-flex h-8 w-fit items-center justify-center gap-0 rounded-lg bg-muted p-0.75 text-muted-foreground;
+  }
+
+  [role="tab"] {
+    @apply inline-flex h-[calc(100%-1px)] flex-1 cursor-pointer items-center justify-center gap-1.5 rounded-md border border-transparent bg-transparent px-1.5 py-0.5 text-sm font-medium whitespace-nowrap text-muted-foreground transition-all outline-none select-none;
+
+    &:hover {
+      @apply text-foreground;
+    }
+
+    &:disabled {
+      @apply pointer-events-none opacity-50;
+    }
+
+    &[aria-selected="true"] {
+      @apply border-input bg-input/30 text-foreground shadow-sm;
+    }
+  }
+
+  [role="tabpanel"] {
+    @apply text-sm outline-none;
+  }
+}

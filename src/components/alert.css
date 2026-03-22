@@ -1,0 +1,36 @@
+@layer components {
+  aside {
+    @apply relative grid w-full grid-cols-[0_1fr] items-start gap-y-0.5 rounded-lg border bg-card px-4 py-3 text-sm text-card-foreground;
+  }
+
+  /* Expand icon column when an <i> or <svg> is present */
+  aside:has(> i),
+  aside:has(> svg) {
+    @apply grid-cols-[1rem_1fr] gap-x-3;
+  }
+
+  aside > i,
+  aside > svg {
+    @apply size-4 text-current;
+
+    translate: 0 2px;
+  }
+
+  aside[destructive] {
+    @apply border-destructive text-destructive;
+  }
+
+  /* Title */
+  aside > :is(strong, h4, h5) {
+    @apply col-start-2 font-medium tracking-tight;
+  }
+
+  /* Description */
+  aside > p {
+    @apply col-start-2 text-sm text-muted-foreground;
+  }
+
+  aside[destructive] > p {
+    @apply text-destructive/90;
+  }
+}

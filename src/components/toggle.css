@@ -1,0 +1,23 @@
+@layer components {
+  input[type="checkbox"][role="switch"] {
+    @apply relative h-5 w-9 cursor-pointer appearance-none rounded-full bg-input transition-all outline-none;
+
+    &::before {
+      content: "";
+
+      @apply absolute top-0.5 left-0.5 size-4 rounded-full bg-foreground transition-transform;
+    }
+
+    &:checked {
+      @apply bg-primary;
+    }
+
+    &:checked::before {
+      @apply translate-x-4 bg-primary-foreground;
+    }
+
+    &:disabled {
+      @apply cursor-not-allowed opacity-50;
+    }
+  }
+}

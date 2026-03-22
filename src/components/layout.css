@@ -1,0 +1,101 @@
+@layer components {
+  /* Stack - vertical grid layout */
+  [stack] {
+    @apply grid;
+
+    gap: 0.75rem;
+  }
+
+  [stack="xs"] {
+    gap: 0.5rem;
+  }
+
+  [stack="md"] {
+    gap: 1rem;
+  }
+
+  [stack="lg"] {
+    gap: 1.25rem;
+  }
+
+  [stack="xl"] {
+    gap: 1.5rem;
+  }
+
+  [stack="2xl"] {
+    gap: 2.5rem;
+  }
+
+  /* Row - horizontal flex with wrap */
+  [row] {
+    @apply flex flex-wrap items-center;
+
+    gap: 0.5rem;
+  }
+
+  [row="sm"] {
+    gap: 0.75rem;
+  }
+
+  [row="md"] {
+    gap: 1rem;
+  }
+
+  [row="lg"] {
+    gap: 1.25rem;
+  }
+
+  /* Grid - responsive auto-fit */
+  [grid] {
+    @apply grid;
+
+    grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
+    gap: 1rem;
+  }
+
+  [grid="sm"] {
+    grid-template-columns: repeat(auto-fit, minmax(12rem, 1fr));
+  }
+
+  [grid="lg"] {
+    grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+  }
+
+  [grid="xl"] {
+    grid-template-columns: repeat(auto-fit, minmax(24rem, 1fr));
+  }
+
+  /* Max-width constraints */
+  [max-w] {
+    max-width: 24rem;
+  }
+
+  [max-w="xs"] {
+    max-width: 20rem;
+  }
+
+  [max-w="md"] {
+    max-width: 32rem;
+  }
+
+  [max-w="lg"] {
+    max-width: 48rem;
+  }
+
+  [max-w="xl"] {
+    max-width: 56rem;
+  }
+
+  /* Text alignment */
+  [align="left"] {
+    text-align: left;
+  }
+
+  [align="center"] {
+    text-align: center;
+  }
+
+  [align="right"] {
+    text-align: right;
+  }
+}

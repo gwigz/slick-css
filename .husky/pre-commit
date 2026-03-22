@@ -1,0 +1,4 @@
+oxfmt --write .
+oxlint
+stylelint 'src/**/*.css'
+git update-index --again

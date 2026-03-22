@@ -1,0 +1,58 @@
+@layer components {
+  article {
+    @apply flex flex-col gap-4 overflow-hidden rounded-xl bg-card py-4 text-sm text-card-foreground;
+
+    box-shadow: 0 0 0 1px var(--border);
+  }
+
+  article:has(> footer) {
+    @apply pb-0;
+  }
+
+  article > header {
+    @apply grid auto-rows-min items-start gap-1 px-4;
+  }
+
+  article > header > h1,
+  article > header > h2,
+  article > header > h3,
+  article > header > h4 {
+    @apply text-base leading-snug font-medium;
+  }
+
+  article > header > p {
+    @apply text-sm text-muted-foreground;
+  }
+
+  article > section,
+  article > div {
+    @apply px-4;
+  }
+
+  article > footer {
+    @apply flex items-center rounded-b-xl border-t bg-muted/50 p-4;
+  }
+
+  /* Empty state variant */
+  article[empty] {
+    @apply items-center px-4 py-8 text-center;
+
+    text-wrap: balance;
+  }
+
+  article[empty] > i,
+  article[empty] > svg {
+    @apply size-10 text-muted-foreground;
+  }
+
+  article[empty] > h1,
+  article[empty] > h2,
+  article[empty] > h3 {
+    @apply text-lg font-semibold;
+  }
+
+  article[empty] > p,
+  article[empty] > b {
+    @apply text-sm text-muted-foreground;
+  }
+}

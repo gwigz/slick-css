@@ -1,0 +1,90 @@
+@layer components {
+  button,
+  [type="submit"],
+  [type="reset"],
+  [role="button"] {
+    @apply inline-flex shrink-0 items-center justify-center gap-1.5 rounded-lg border border-transparent text-sm font-medium whitespace-nowrap transition-all outline-none select-none;
+    @apply h-8 px-2.5;
+
+    /* Default variant: primary solid */
+    @apply bg-primary text-primary-foreground;
+
+    /* Hover */
+    &:hover {
+      @apply bg-primary/80;
+    }
+
+    /* Active press */
+    &:active {
+      transform: translateY(1px);
+    }
+
+    /* Disabled */
+    &:disabled {
+      @apply pointer-events-none opacity-50;
+    }
+  }
+
+  /* Secondary variant */
+  button[secondary],
+  [type="submit"][secondary],
+  [role="button"][secondary] {
+    @apply bg-secondary text-secondary-foreground;
+
+    &:hover {
+      @apply bg-secondary/80;
+    }
+  }
+
+  /* Destructive variant */
+  button[destructive],
+  [type="submit"][destructive],
+  [role="button"][destructive] {
+    @apply bg-destructive/20 text-destructive;
+
+    &:hover {
+      @apply bg-destructive/30;
+    }
+
+    &:focus-visible {
+      @apply border-destructive/40 ring-destructive/20;
+    }
+  }
+
+  /* Outline variant */
+  button[outline],
+  [type="submit"][outline],
+  [role="button"][outline] {
+    @apply border-input bg-input/30 text-foreground;
+
+    &:hover {
+      @apply bg-input/50;
+    }
+  }
+
+  /* Ghost variant */
+  button[ghost],
+  [type="submit"][ghost],
+  [role="button"][ghost] {
+    @apply bg-transparent text-foreground;
+
+    &:hover {
+      @apply bg-muted/50;
+    }
+  }
+
+  /* Link variant */
+  button[link],
+  [type="submit"][link],
+  [role="button"][link] {
+    @apply h-auto bg-transparent p-0 text-primary rounded-none underline-offset-4;
+
+    &:hover {
+      @apply bg-transparent underline;
+    }
+
+    &:active {
+      transform: none;
+    }
+  }
+}

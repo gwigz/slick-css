@@ -1,0 +1,52 @@
+@layer components {
+  progress {
+    @apply h-1 w-full overflow-hidden rounded-full bg-muted;
+
+    appearance: none;
+    border: none;
+  }
+
+  progress::-webkit-progress-bar {
+    @apply rounded-full bg-muted;
+  }
+
+  progress::-webkit-progress-value {
+    @apply rounded-full bg-primary transition-all;
+  }
+
+  progress::-moz-progress-bar {
+    @apply rounded-full bg-primary;
+  }
+
+  @keyframes progress-indeterminate {
+    0% {
+      transform: translateX(-100%);
+    }
+
+    100% {
+      transform: translateX(400%);
+    }
+  }
+
+  progress:indeterminate {
+    overflow: hidden;
+  }
+
+  progress:indeterminate::-webkit-progress-bar {
+    background: transparent;
+  }
+
+  progress:indeterminate::-webkit-progress-value {
+    @apply bg-primary rounded-full;
+
+    width: 30%;
+    animation: progress-indeterminate 1.5s ease-in-out infinite;
+  }
+
+  progress:indeterminate::-moz-progress-bar {
+    @apply bg-primary rounded-full;
+
+    width: 30%;
+    animation: progress-indeterminate 1.5s ease-in-out infinite;
+  }
+}
