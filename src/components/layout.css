@@ -98,4 +98,27 @@
   [align="right"] {
     text-align: right;
   }
+
+  /* Text color */
+  [color="destructive"] {
+    color: var(--destructive);
+  }
+
+  [color="success"] {
+    color: var(--success);
+  }
+
+  [color="muted"] {
+    color: var(--muted-foreground);
+  }
+
+  /* Flex spacer */
+  [spacer] {
+    flex: 1;
+  }
+
+  /* Text truncation */
+  [truncate] {
+    @apply min-w-0 overflow-hidden text-ellipsis whitespace-nowrap;
+  }
 }

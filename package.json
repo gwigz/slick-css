@@ -1,6 +1,6 @@
 {
   "name": "@gwigz/slick-css",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "license": "MIT",
   "style": "dist/slick.min.css",
   "files": [
