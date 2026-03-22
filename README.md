@@ -40,10 +40,10 @@ Or the static (smaller) variant:
 
 | File                   | Size     | Gzip    | Description                                         |
 | ---------------------- | -------- | ------- | --------------------------------------------------- |
-| `slick.css`            | ~43.9 KB | ~6.3 KB | Readable, full Tailwind var compatibility           |
-| `slick.min.css`        | ~34.8 KB | ~5.8 KB | Minified, full Tailwind var compatibility (default) |
-| `slick-static.css`     | ~39.3 KB | ~5.9 KB | Readable, dead `--tw-*` vars removed                |
-| `slick-static.min.css` | ~30.9 KB | ~5.4 KB | Minified, smallest size                             |
+| `slick.css`            | ~46.5 KB | ~6.7 KB | Readable, full Tailwind var compatibility           |
+| `slick.min.css`        | ~36.8 KB | ~6.1 KB | Minified, full Tailwind var compatibility (default) |
+| `slick-static.css`     | ~41.9 KB | ~6.2 KB | Readable, dead `--tw-*` vars removed                |
+| `slick-static.min.css` | ~33.0 KB | ~5.7 KB | Minified, smallest size                             |
 
 <!-- /variants -->
 
@@ -74,6 +74,18 @@ Then write plain HTML:
   </footer>
 </article>
 
+<article flush>
+  <header><h3>Settings</h3></header>
+  <details>
+    <summary>Appearance</summary>
+    <p>Customize the look and feel.</p>
+  </details>
+  <details>
+    <summary>Notifications</summary>
+    <p>Configure alerts.</p>
+  </details>
+</article>
+
 <input type="text" placeholder="Input" />
 <textarea placeholder="Textarea"></textarea>
 <select>
@@ -101,23 +113,38 @@ Then write plain HTML:
 
 ## Components
 
-| Component | Selector                                                       | Variants                                                         |
-| --------- | -------------------------------------------------------------- | ---------------------------------------------------------------- |
-| Button    | `button`, `[type="submit"]`                                    | `[secondary]`, `[destructive]`, `[outline]`, `[ghost]`, `[link]` |
-| Badge     | `kbd`                                                          | `[secondary]`, `[destructive]`, `[outline]`                      |
-| Card      | `article`                                                      | -                                                                |
-| Input     | `input:not([type="checkbox"]):not([type="radio"])`, `textarea` | -                                                                |
-| Select    | `select`                                                       | -                                                                |
-| Checkbox  | `input[type="checkbox"]`                                       | -                                                                |
-| Radio     | `input[type="radio"]`                                          | -                                                                |
-| Toggle    | `input[type="checkbox"][role="switch"]`                        | -                                                                |
-| Dialog    | `dialog`                                                       | -                                                                |
-| Progress  | `progress`                                                     | -                                                                |
-| Accordion | `details > summary`                                            | -                                                                |
-| Tabs      | `[role="tablist"]`, `[role="tab"]`, `[role="tabpanel"]`        | -                                                                |
-| Tooltip   | `[tooltip-top]`, `[tooltip-bottom]`                            | -                                                                |
-| Separator | `hr`                                                           | -                                                                |
-| Label     | `label`                                                        | -                                                                |
+| Component | Selector                                                       | Variants                                                                 |
+| --------- | -------------------------------------------------------------- | ------------------------------------------------------------------------ |
+| Button    | `button`, `[type="submit"]`                                    | `[secondary]`, `[destructive]`, `[outline]`, `[ghost]`, `[link]`, `[sm]` |
+| Badge     | `kbd`                                                          | `[secondary]`, `[destructive]`, `[outline]`                              |
+| Card      | `article`                                                      | `[empty]`, `[flush]`                                                     |
+| Input     | `input:not([type="checkbox"]):not([type="radio"])`, `textarea` | `[sm]`                                                                   |
+| Select    | `select`                                                       | -                                                                        |
+| Checkbox  | `input[type="checkbox"]`                                       | -                                                                        |
+| Radio     | `input[type="radio"]`                                          | -                                                                        |
+| Toggle    | `input[type="checkbox"][role="switch"]`                        | -                                                                        |
+| Dialog    | `dialog`                                                       | -                                                                        |
+| Progress  | `progress`                                                     | -                                                                        |
+| Accordion | `details > summary`                                            | `[left]`                                                                 |
+| Tabs      | `[role="tablist"]`, `[role="tab"]`, `[role="tabpanel"]`        | -                                                                        |
+| Tooltip   | `[tooltip-top]`, `[tooltip-bottom]`                            | -                                                                        |
+| Log       | `samp`                                                         | -                                                                        |
+| Separator | `hr`                                                           | -                                                                        |
+| Spinner   | `[aria-busy="true"]`                                           | -                                                                        |
+| Label     | `label`                                                        | -                                                                        |
+
+### Layout Utilities
+
+| Utility   | Selector     | Sizes / Values                    |
+| --------- | ------------ | --------------------------------- |
+| Stack     | `[stack]`    | `xs`, `md`, `lg`, `xl`, `2xl`     |
+| Row       | `[row]`      | `sm`, `md`, `lg`                  |
+| Grid      | `[grid]`     | `sm`, `lg`, `xl`                  |
+| Max Width | `[max-w]`    | `xs`, `md`, `lg`, `xl`            |
+| Align     | `[align]`    | `left`, `center`, `right`         |
+| Color     | `[color]`    | `destructive`, `success`, `muted` |
+| Spacer    | `[spacer]`   | -                                 |
+| Truncate  | `[truncate]` | -                                 |
 
 ## Theming
 
@@ -125,9 +152,24 @@ Slick uses CSS custom properties. Override them to customize:
 
 ```css
 :root {
-  --primary: oklch(0.593 0.204 264.376);
-  --primary-foreground: oklch(0.98 0.016 263.684);
-  --ring: oklch(0.593 0.204 264.376);
+  --background: oklch(14.5% 0 0deg);
+  --foreground: oklch(98.5% 0 0deg);
+  --card: oklch(20.5% 0 0deg);
+  --card-foreground: oklch(98.5% 0 0deg);
+  --primary: oklch(92.2% 0 0deg);
+  --primary-foreground: oklch(20.5% 0 0deg);
+  --secondary: oklch(26.9% 0 0deg);
+  --secondary-foreground: oklch(98.5% 0 0deg);
+  --muted: oklch(26.9% 0 0deg);
+  --muted-foreground: oklch(70.8% 0 0deg);
+  --destructive: oklch(70.4% 0.191 22.216deg);
+  --destructive-foreground: oklch(98.5% 0 0deg);
+  --success: oklch(72.3% 0.194 142.5deg);
+  --success-foreground: oklch(98.5% 0 0deg);
+  --border: oklch(100% 0 0deg / 10%);
+  --input: oklch(100% 0 0deg / 15%);
+  --ring: oklch(55.6% 0 0deg);
+  --radius: 0.625rem;
 }
 ```
 
