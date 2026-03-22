@@ -1,6 +1,6 @@
 @layer components {
   input[type="checkbox"]:not([role="switch"]) {
-    @apply relative size-4 shrink-0 cursor-pointer appearance-none rounded-lg border border-input bg-input/30 transition-all outline-none;
+    @apply relative size-4 shrink-0 cursor-pointer appearance-none rounded-sm border border-input bg-input/30 transition-all outline-none;
 
     &:disabled {
       @apply cursor-not-allowed opacity-50;
