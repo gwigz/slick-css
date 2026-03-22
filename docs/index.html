@@ -3,7 +3,16 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Slick CSS</title>
+    <title>Slick CSS • Classless CSS Components</title>
+    <meta
+      name="description"
+      content="Classless CSS components inspired by shadcn/ui. Drop in a stylesheet, write semantic HTML, and get beautiful dark-mode components with zero classes."
+    />
+    <meta property="og:title" content="Slick CSS • Classless CSS Components" />
+    <meta
+      property="og:description"
+      content="Classless CSS components inspired by shadcn/ui. Drop in a stylesheet, write semantic HTML, and get beautiful dark-mode components with zero classes."
+    />
     <link rel="stylesheet" href="slick.min.css" />
     <style>
       body {
@@ -128,6 +137,609 @@
 
       <!-- Component Sections -->
 
+      <!-- 1. Buttons -->
+      <section stack>
+        <h2>Buttons</h2>
+        <div row>
+          <button>Primary</button>
+          <button secondary>Secondary</button>
+          <button destructive>Destructive</button>
+          <button outline>Outline</button>
+          <button ghost>Ghost</button>
+          <button link>Link</button>
+          <button disabled>Disabled</button>
+        </div>
+        <div row>
+          <button aria-busy="true">Loading</button>
+          <button secondary aria-busy="true">Loading</button>
+          <button outline aria-busy="true">Loading</button>
+        </div>
+        <details>
+          <summary>View HTML</summary>
+          <pre><code>&lt;button&gt;Primary&lt;/button&gt;
+&lt;button secondary&gt;Secondary&lt;/button&gt;
+&lt;button destructive&gt;Destructive&lt;/button&gt;
+&lt;button outline&gt;Outline&lt;/button&gt;
+&lt;button ghost&gt;Ghost&lt;/button&gt;
+&lt;button link&gt;Link&lt;/button&gt;
+&lt;button disabled&gt;Disabled&lt;/button&gt;
+&lt;button aria-busy=&quot;true&quot;&gt;Loading&lt;/button&gt;</code></pre>
+        </details>
+      </section>
+      <hr />
+
+      <!-- 2. Badges -->
+      <section stack>
+        <h2>Badges</h2>
+        <div row>
+          <kbd>Default</kbd>
+          <kbd secondary>Secondary</kbd>
+          <kbd destructive>Error</kbd>
+          <kbd outline>Outline</kbd>
+        </div>
+        <details>
+          <summary>View HTML</summary>
+          <pre><code>&lt;kbd&gt;Default&lt;/kbd&gt;
+&lt;kbd secondary&gt;Secondary&lt;/kbd&gt;
+&lt;kbd destructive&gt;Error&lt;/kbd&gt;
+&lt;kbd outline&gt;Outline&lt;/kbd&gt;</code></pre>
+        </details>
+      </section>
+      <hr />
+
+      <!-- 3. Tooltips -->
+      <section stack>
+        <h2>Tooltips</h2>
+        <div row style="padding: 2rem 0">
+          <button outline tooltip-top="Tooltip on top">Hover (top)</button>
+          <button outline tooltip-bottom="Tooltip on bottom">Hover (bottom)</button>
+        </div>
+        <details>
+          <summary>View HTML</summary>
+          <pre><code>&lt;button outline tooltip-top=&quot;Tooltip on top&quot;&gt;Hover (top)&lt;/button&gt;
+&lt;button outline tooltip-bottom=&quot;Tooltip on bottom&quot;&gt;Hover (bottom)&lt;/button&gt;</code></pre>
+        </details>
+      </section>
+      <hr />
+
+      <!-- 4. Alerts -->
+      <section stack>
+        <h2>Alerts</h2>
+        <aside>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="16"
+            height="16"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <circle cx="12" cy="12" r="10" />
+            <path d="M12 16v-4" />
+            <path d="M12 8h.01" />
+          </svg>
+          <strong>Heads up!</strong>
+          <p>Changes you make here will be applied to all selected items.</p>
+        </aside>
+        <aside destructive>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="16"
+            height="16"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <circle cx="12" cy="12" r="10" />
+            <line x1="12" x2="12" y1="8" y2="12" />
+            <line x1="12" x2="12.01" y1="16" y2="16" />
+          </svg>
+          <strong>Error</strong>
+          <p>Your session has expired. Please log in again.</p>
+        </aside>
+        <details>
+          <summary>View HTML</summary>
+          <pre><code>&lt;aside&gt;
+  &lt;strong&gt;Heads up!&lt;/strong&gt;
+  &lt;p&gt;Your informational message here.&lt;/p&gt;
+&lt;/aside&gt;
+
+&lt;aside destructive&gt;
+  &lt;strong&gt;Error&lt;/strong&gt;
+  &lt;p&gt;Your error message here.&lt;/p&gt;
+&lt;/aside&gt;</code></pre>
+        </details>
+      </section>
+      <hr />
+
+      <!-- 5. Cards -->
+      <section stack>
+        <h2>Cards</h2>
+        <div grid>
+          <article>
+            <header>
+              <h3>Notifications</h3>
+              <p>You have 3 unread messages.</p>
+            </header>
+            <section>
+              <p>Check your inbox for the latest updates from your team.</p>
+            </section>
+            <footer>
+              <button outline>Dismiss</button>
+              <button>View All</button>
+            </footer>
+          </article>
+          <article>
+            <header>
+              <h3>Team Members</h3>
+              <p>Manage your team and permissions.</p>
+            </header>
+            <section>
+              <div stack="xs">
+                <div row>
+                  <input type="checkbox" id="demo-alice" checked />
+                  <label for="demo-alice">Alice (Admin)</label>
+                </div>
+                <div row>
+                  <input type="checkbox" id="demo-bob" checked />
+                  <label for="demo-bob">Bob (Editor)</label>
+                </div>
+                <div row>
+                  <input type="checkbox" id="demo-carol" />
+                  <label for="demo-carol">Carol (Viewer)</label>
+                </div>
+              </div>
+            </section>
+          </article>
+          <article empty>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="48"
+              height="48"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <polyline points="22 12 16 12 14 15 10 15 8 12 2 12" />
+              <path
+                d="M5.45 5.11 2 12v6a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-6l-3.45-6.89A2 2 0 0 0 16.76 4H7.24a2 2 0 0 0-1.79 1.11z"
+              />
+            </svg>
+            <h2>No items found</h2>
+            <b>There are no patchable objects in the inventory</b>
+          </article>
+        </div>
+        <details>
+          <summary>View HTML</summary>
+          <pre><code>&lt;article&gt;
+  &lt;header&gt;
+    &lt;h3&gt;Card Title&lt;/h3&gt;
+    &lt;p&gt;Card description.&lt;/p&gt;
+  &lt;/header&gt;
+  &lt;section&gt;
+    &lt;p&gt;Card content.&lt;/p&gt;
+  &lt;/section&gt;
+  &lt;footer&gt;
+    &lt;button outline&gt;Cancel&lt;/button&gt;
+    &lt;button&gt;Confirm&lt;/button&gt;
+  &lt;/footer&gt;
+&lt;/article&gt;
+
+&lt;article empty&gt;
+  &lt;h2&gt;No items found&lt;/h2&gt;
+  &lt;b&gt;Description text here&lt;/b&gt;
+&lt;/article&gt;</code></pre>
+        </details>
+      </section>
+      <hr />
+
+      <!-- 6. Tabs -->
+      <section stack>
+        <h2>Tabs</h2>
+        <div>
+          <div role="tablist" aria-label="Account settings">
+            <button role="tab" aria-selected="true" aria-controls="demo-panel-account" id="demo-tab-account">
+              Account
+            </button>
+            <button role="tab" aria-selected="false" aria-controls="demo-panel-password" id="demo-tab-password">
+              Password
+            </button>
+            <button role="tab" aria-selected="false" aria-controls="demo-panel-billing" id="demo-tab-billing">
+              Billing
+            </button>
+          </div>
+          <div role="tabpanel" id="demo-panel-account" aria-labelledby="demo-tab-account">
+            <div stack style="padding-top: 0.25rem">
+              <div stack="xs">
+                <label for="demo-display-name">Display Name</label>
+                <input type="text" id="demo-display-name" placeholder="Your display name" value="Jane Doe" />
+              </div>
+              <div stack="xs">
+                <label for="demo-email">Email</label>
+                <input type="email" id="demo-email" placeholder="you@example.com" value="jane@example.com" />
+              </div>
+              <div><button>Save Changes</button></div>
+            </div>
+          </div>
+          <div role="tabpanel" id="demo-panel-password" aria-labelledby="demo-tab-password" hidden>
+            <div stack style="padding-top: 0.25rem">
+              <div stack="xs">
+                <label for="demo-current-pw">Current Password</label>
+                <input type="password" id="demo-current-pw" placeholder="Enter current password" />
+              </div>
+              <div stack="xs">
+                <label for="demo-new-pw">New Password</label>
+                <input type="password" id="demo-new-pw" placeholder="Enter new password" />
+              </div>
+              <div><button>Update Password</button></div>
+            </div>
+          </div>
+          <div role="tabpanel" id="demo-panel-billing" aria-labelledby="demo-tab-billing" hidden>
+            <div stack style="padding-top: 0.25rem">
+              <p>Your current plan: <kbd>Pro</kbd></p>
+              <progress value="75" max="100"></progress>
+              <p style="font-size: 0.875rem; color: var(--muted-foreground)">75% of storage used</p>
+            </div>
+          </div>
+        </div>
+        <details>
+          <summary>View HTML</summary>
+          <pre><code>&lt;div role=&quot;tablist&quot; aria-label=&quot;Account settings&quot;&gt;
+  &lt;button role=&quot;tab&quot; aria-selected=&quot;true&quot; aria-controls=&quot;panel-1&quot;&gt;Tab 1&lt;/button&gt;
+  &lt;button role=&quot;tab&quot; aria-selected=&quot;false&quot; aria-controls=&quot;panel-2&quot;&gt;Tab 2&lt;/button&gt;
+&lt;/div&gt;
+&lt;div role=&quot;tabpanel&quot; id=&quot;panel-1&quot;&gt;
+  &lt;p&gt;Panel 1 content&lt;/p&gt;
+&lt;/div&gt;
+&lt;div role=&quot;tabpanel&quot; id=&quot;panel-2&quot; hidden&gt;
+  &lt;p&gt;Panel 2 content&lt;/p&gt;
+&lt;/div&gt;</code></pre>
+        </details>
+      </section>
+      <hr />
+
+      <!-- 7. Table -->
+      <section stack>
+        <h2>Table</h2>
+        <table>
+          <caption>
+            Recent invoices
+          </caption>
+          <thead>
+            <tr>
+              <th>Invoice</th>
+              <th>Status</th>
+              <th>Method</th>
+              <th align="right">Amount</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>INV-001</td>
+              <td><kbd>Paid</kbd></td>
+              <td>Credit Card</td>
+              <td align="right">$250.00</td>
+            </tr>
+            <tr>
+              <td>INV-002</td>
+              <td><kbd secondary>Pending</kbd></td>
+              <td>PayPal</td>
+              <td align="right">$150.00</td>
+            </tr>
+            <tr>
+              <td>INV-003</td>
+              <td><kbd destructive>Overdue</kbd></td>
+              <td>Bank Transfer</td>
+              <td align="right">$350.00</td>
+            </tr>
+            <tr>
+              <td>INV-004</td>
+              <td><kbd>Paid</kbd></td>
+              <td>Credit Card</td>
+              <td align="right">$450.00</td>
+            </tr>
+          </tbody>
+          <tfoot>
+            <tr>
+              <td colspan="3">Total</td>
+              <td align="right">$1,200.00</td>
+            </tr>
+          </tfoot>
+        </table>
+        <details>
+          <summary>View HTML</summary>
+          <pre><code>&lt;table&gt;
+  &lt;caption&gt;Recent invoices&lt;/caption&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;Invoice&lt;/th&gt;
+      &lt;th&gt;Status&lt;/th&gt;
+      &lt;th align=&quot;right&quot;&gt;Amount&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;INV-001&lt;/td&gt;
+      &lt;td&gt;&lt;kbd&gt;Paid&lt;/kbd&gt;&lt;/td&gt;
+      &lt;td align=&quot;right&quot;&gt;$250.00&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+  &lt;tfoot&gt;
+    &lt;tr&gt;
+      &lt;td colspan=&quot;2&quot;&gt;Total&lt;/td&gt;
+      &lt;td align=&quot;right&quot;&gt;$1,200.00&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tfoot&gt;
+&lt;/table&gt;</code></pre>
+        </details>
+      </section>
+      <hr />
+
+      <!-- 8. Form Elements -->
+      <section stack>
+        <h2>Form Elements</h2>
+        <div grid style="gap: 1.5rem">
+          <fieldset>
+            <legend>Contact Details</legend>
+            <div stack>
+              <div stack="xs">
+                <label for="demo-fname">First Name</label>
+                <input type="text" id="demo-fname" placeholder="John" />
+              </div>
+              <div stack="xs">
+                <label for="demo-lname">Last Name</label>
+                <input type="text" id="demo-lname" placeholder="Doe" />
+              </div>
+              <div stack="xs">
+                <label for="demo-invalid">Invalid Field</label>
+                <input type="text" id="demo-invalid" value="Bad input" aria-invalid="true" />
+              </div>
+              <div stack="xs">
+                <label for="demo-disabled-input">Disabled</label>
+                <input type="text" id="demo-disabled-input" placeholder="Disabled" disabled />
+              </div>
+            </div>
+          </fieldset>
+
+          <div stack="lg" style="align-content: start">
+            <div stack="xs">
+              <label for="demo-select">Select</label>
+              <select id="demo-select">
+                <option value="" disabled selected>Choose a framework</option>
+                <option value="next">Next.js</option>
+                <option value="remix">Remix</option>
+                <option value="astro">Astro</option>
+              </select>
+            </div>
+
+            <div stack="xs">
+              <label for="demo-message">Message</label>
+              <textarea id="demo-message" placeholder="Write something..."></textarea>
+            </div>
+          </div>
+
+          <div stack="lg" style="align-content: start">
+            <fieldset plain>
+              <legend>Notification Preferences</legend>
+              <div stack>
+                <div row>
+                  <input type="radio" name="demo-notify" id="demo-all" value="all" checked />
+                  <label for="demo-all">All notifications</label>
+                </div>
+                <div row>
+                  <input type="radio" name="demo-notify" id="demo-mentions" value="mentions" />
+                  <label for="demo-mentions">Mentions only</label>
+                </div>
+                <div row>
+                  <input type="radio" name="demo-notify" id="demo-none" value="none" />
+                  <label for="demo-none">None</label>
+                </div>
+              </div>
+            </fieldset>
+
+            <hr />
+
+            <div stack>
+              <div row>
+                <input type="checkbox" role="switch" id="demo-dark" checked />
+                <label for="demo-dark">Dark Mode</label>
+              </div>
+              <div row>
+                <input type="checkbox" role="switch" id="demo-airplane" />
+                <label for="demo-airplane">Airplane Mode</label>
+              </div>
+            </div>
+          </div>
+        </div>
+        <details>
+          <summary>View HTML</summary>
+          <pre><code>&lt;label for=&quot;name&quot;&gt;Name&lt;/label&gt;
+&lt;input type=&quot;text&quot; id=&quot;name&quot; placeholder=&quot;John&quot; /&gt;
+
+&lt;input type=&quot;text&quot; aria-invalid=&quot;true&quot; value=&quot;Bad input&quot; /&gt;
+
+&lt;select&gt;
+  &lt;option value=&quot;&quot; disabled selected&gt;Choose...&lt;/option&gt;
+  &lt;option value=&quot;a&quot;&gt;Option A&lt;/option&gt;
+&lt;/select&gt;
+
+&lt;textarea placeholder=&quot;Write something...&quot;&gt;&lt;/textarea&gt;
+
+&lt;input type=&quot;radio&quot; name=&quot;group&quot; id=&quot;opt1&quot; /&gt;
+&lt;label for=&quot;opt1&quot;&gt;Option 1&lt;/label&gt;
+
+&lt;input type=&quot;checkbox&quot; role=&quot;switch&quot; id=&quot;toggle&quot; /&gt;
+&lt;label for=&quot;toggle&quot;&gt;Toggle&lt;/label&gt;</code></pre>
+        </details>
+      </section>
+      <hr />
+
+      <!-- 9. Accordion -->
+      <section stack>
+        <h2>Accordion</h2>
+        <div max-w="md">
+          <details open>
+            <summary>Is it accessible?</summary>
+            <p>Yes. It adheres to the WAI-ARIA design pattern.</p>
+          </details>
+          <details>
+            <summary>Is it styled?</summary>
+            <p>Yes. It comes with default styles that match shadcn/ui aesthetics.</p>
+          </details>
+          <details>
+            <summary>Is it animated?</summary>
+            <p>The chevron rotates on open/close with a CSS transition.</p>
+          </details>
+        </div>
+        <details>
+          <summary>View HTML</summary>
+          <pre><code>&lt;details open&gt;
+  &lt;summary&gt;Is it accessible?&lt;/summary&gt;
+  &lt;p&gt;Yes. It adheres to the WAI-ARIA design pattern.&lt;/p&gt;
+&lt;/details&gt;
+&lt;details&gt;
+  &lt;summary&gt;Is it styled?&lt;/summary&gt;
+  &lt;p&gt;Yes. It comes with default styles.&lt;/p&gt;
+&lt;/details&gt;</code></pre>
+        </details>
+      </section>
+      <hr />
+
+      <!-- 10. Progress -->
+      <section stack>
+        <h2>Progress</h2>
+        <div stack max-w>
+          <progress value="25" max="100"></progress>
+          <progress value="60" max="100"></progress>
+          <progress value="100" max="100"></progress>
+          <progress></progress>
+        </div>
+        <details>
+          <summary>View HTML</summary>
+          <pre><code>&lt;progress value=&quot;25&quot; max=&quot;100&quot;&gt;&lt;/progress&gt;
+&lt;progress value=&quot;60&quot; max=&quot;100&quot;&gt;&lt;/progress&gt;
+&lt;progress value=&quot;100&quot; max=&quot;100&quot;&gt;&lt;/progress&gt;
+&lt;progress&gt;&lt;/progress&gt;</code></pre>
+        </details>
+      </section>
+      <hr />
+
+      <!-- 11. Dialog -->
+      <section stack>
+        <h2>Dialog</h2>
+        <div>
+          <button data-open-dialog="demo-dialog" outline>Open Dialog</button>
+          <dialog id="demo-dialog">
+            <header>
+              <h3>Are you sure?</h3>
+              <p>This action cannot be undone.</p>
+            </header>
+            <section>
+              <p>This will permanently delete the selected items and remove all associated data.</p>
+            </section>
+            <footer>
+              <button outline data-close-dialog>Cancel</button>
+              <button destructive data-close-dialog>Delete</button>
+            </footer>
+          </dialog>
+        </div>
+        <details>
+          <summary>View HTML</summary>
+          <pre><code>&lt;button data-open-dialog=&quot;my-dialog&quot;&gt;Open Dialog&lt;/button&gt;
+&lt;dialog id=&quot;my-dialog&quot;&gt;
+  &lt;header&gt;
+    &lt;h3&gt;Are you sure?&lt;/h3&gt;
+    &lt;p&gt;This action cannot be undone.&lt;/p&gt;
+  &lt;/header&gt;
+  &lt;section&gt;
+    &lt;p&gt;Dialog content here.&lt;/p&gt;
+  &lt;/section&gt;
+  &lt;footer&gt;
+    &lt;button outline data-close-dialog&gt;Cancel&lt;/button&gt;
+    &lt;button destructive data-close-dialog&gt;Delete&lt;/button&gt;
+  &lt;/footer&gt;
+&lt;/dialog&gt;</code></pre>
+        </details>
+      </section>
+      <hr />
+
+      <!-- 12. Spinner / Skeleton -->
+      <section stack>
+        <h2>Spinner / Skeleton</h2>
+        <div row>
+          <button aria-busy="true">Loading</button>
+          <button secondary aria-busy="true">Loading</button>
+        </div>
+        <article aria-busy="true" max-w style="min-height: 8rem">
+          <header><h3>Loading...</h3></header>
+        </article>
+        <details>
+          <summary>View HTML</summary>
+          <pre><code>&lt;button aria-busy=&quot;true&quot;&gt;Loading&lt;/button&gt;
+
+&lt;article aria-busy=&quot;true&quot;&gt;
+  &lt;header&gt;&lt;h3&gt;Loading...&lt;/h3&gt;&lt;/header&gt;
+&lt;/article&gt;</code></pre>
+        </details>
+      </section>
+      <hr />
+
+      <!-- 13. Layout Utilities -->
+      <section stack>
+        <h2>Layout Utilities</h2>
+
+        <h3><code>[stack]</code></h3>
+        <div stack style="max-width: 20rem">
+          <div style="background: var(--secondary); padding: 0.5rem 1rem; border-radius: var(--radius)">Item 1</div>
+          <div style="background: var(--secondary); padding: 0.5rem 1rem; border-radius: var(--radius)">Item 2</div>
+          <div style="background: var(--secondary); padding: 0.5rem 1rem; border-radius: var(--radius)">Item 3</div>
+        </div>
+
+        <h3><code>[row]</code></h3>
+        <div row>
+          <div style="background: var(--secondary); padding: 0.5rem 1rem; border-radius: var(--radius)">Item 1</div>
+          <div style="background: var(--secondary); padding: 0.5rem 1rem; border-radius: var(--radius)">Item 2</div>
+          <div style="background: var(--secondary); padding: 0.5rem 1rem; border-radius: var(--radius)">Item 3</div>
+        </div>
+
+        <h3><code>[grid]</code></h3>
+        <div grid>
+          <div style="background: var(--secondary); padding: 0.5rem 1rem; border-radius: var(--radius)">Item 1</div>
+          <div style="background: var(--secondary); padding: 0.5rem 1rem; border-radius: var(--radius)">Item 2</div>
+          <div style="background: var(--secondary); padding: 0.5rem 1rem; border-radius: var(--radius)">Item 3</div>
+        </div>
+
+        <h3><code>[max-w]</code></h3>
+        <div max-w style="background: var(--secondary); padding: 0.5rem 1rem; border-radius: var(--radius)">
+          Constrained to max-width
+        </div>
+
+        <details>
+          <summary>View HTML</summary>
+          <pre><code>&lt;div stack&gt;...&lt;/div&gt;
+&lt;div row&gt;...&lt;/div&gt;
+&lt;div grid&gt;...&lt;/div&gt;
+&lt;div max-w&gt;...&lt;/div&gt;</code></pre>
+        </details>
+      </section>
+
+      <!-- Theme Variables -->
+      <hr />
+      <section stack>
+        <h2>Theme Variables</h2>
+        <p>Copy these CSS custom properties to customize Slick CSS in your project.</p>
+        <pre style="position: relative"><code id="theme-vars-output"></code></pre>
+      </section>
+
       <!-- Footer -->
       <footer>
         <p><a href="https://github.com/gwigz/slick-css">GitHub</a></p>
@@ -211,6 +823,84 @@
       radiusButtons.forEach((btn) => {
         btn.addEventListener("click", () => setActiveRadius(btn.dataset.radius));
       });
+
+      // Tab switching
+      document.querySelectorAll('[role="tablist"]').forEach((tablist) => {
+        const tabs = tablist.querySelectorAll('[role="tab"]');
+        const container = tablist.parentElement;
+        tabs.forEach((tab) => {
+          tab.addEventListener("click", () => {
+            tabs.forEach((t) => t.setAttribute("aria-selected", "false"));
+            container.querySelectorAll('[role="tabpanel"]').forEach((p) => (p.hidden = true));
+            tab.setAttribute("aria-selected", "true");
+            const panel = container.querySelector("#" + tab.getAttribute("aria-controls"));
+            if (panel) panel.hidden = false;
+          });
+        });
+      });
+
+      // Dialog wiring
+      document.querySelectorAll("[data-open-dialog]").forEach((btn) => {
+        const dialog = document.querySelector("#" + btn.dataset.openDialog);
+        btn.addEventListener("click", () => dialog?.showModal());
+      });
+      document.querySelectorAll("[data-close-dialog]").forEach((btn) => {
+        btn.addEventListener("click", () => btn.closest("dialog")?.close());
+      });
+
+      // Copy-to-clipboard on code blocks
+      document.querySelectorAll("details pre").forEach((pre) => {
+        const btn = document.createElement("button");
+        btn.textContent = "Copy";
+        btn.setAttribute("ghost", "");
+        btn.style.cssText = "position:absolute;top:0.5rem;right:0.5rem;font-size:0.75rem;padding:0.25rem 0.5rem;";
+        pre.style.position = "relative";
+        btn.addEventListener("click", (e) => {
+          e.preventDefault();
+          navigator.clipboard.writeText(pre.querySelector("code").textContent);
+          btn.textContent = "Copied!";
+          setTimeout(() => (btn.textContent = "Copy"), 1500);
+        });
+        pre.appendChild(btn);
+      });
+
+      // Theme variables display
+      function updateThemeVarsDisplay() {
+        const style = getComputedStyle(document.documentElement);
+        const vars = [
+          "--background",
+          "--foreground",
+          "--card",
+          "--card-foreground",
+          "--primary",
+          "--primary-foreground",
+          "--secondary",
+          "--secondary-foreground",
+          "--muted",
+          "--muted-foreground",
+          "--destructive",
+          "--destructive-foreground",
+          "--border",
+          "--input",
+          "--ring",
+          "--radius",
+        ];
+        const output = ":root {\n" + vars.map((v) => `  ${v}: ${style.getPropertyValue(v).trim()};`).join("\n") + "\n}";
+        const el = document.getElementById("theme-vars-output");
+        if (el) el.textContent = output;
+      }
+
+      // Patch theme/radius setters to also update vars display
+      const _origSetTheme = setActiveTheme;
+      setActiveTheme = function (name) {
+        _origSetTheme(name);
+        requestAnimationFrame(updateThemeVarsDisplay);
+      };
+      const _origSetRadius = setActiveRadius;
+      setActiveRadius = function (value) {
+        _origSetRadius(value);
+        requestAnimationFrame(updateThemeVarsDisplay);
+      };
 
       // Set defaults on page load
       setActiveTheme("zinc");
