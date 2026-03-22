@@ -30,7 +30,38 @@
   }
 
   article > footer {
-    @apply flex items-center rounded-b-xl border-t bg-muted/50 p-4;
+    @apply flex items-center gap-2 rounded-b-xl border-t bg-muted/50 p-4;
+  }
+
+  /* Flush variant - no padding or gap */
+  article[flush] {
+    @apply gap-0 py-0;
+  }
+
+  /* Flush content padding */
+  article[flush] > div,
+  article[flush] > section {
+    @apply px-3 py-2;
+  }
+
+  /* Flush header */
+  article[flush] > header {
+    @apply border-b border-border px-3 py-2;
+  }
+
+  /* Flush accordion - grouped list inside card */
+  article[flush] > details > summary {
+    @apply select-none px-3;
+
+    &:hover {
+      background: var(--muted);
+    }
+  }
+
+  article[flush] > details > :not(summary) {
+    @apply bg-secondary pb-0;
+
+    border-top: 1px solid var(--border);
   }
 
   /* Empty state variant */

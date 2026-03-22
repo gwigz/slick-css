@@ -4,7 +4,7 @@
   }
 
   dialog {
-    @apply fixed m-auto flex w-full max-w-sm flex-col gap-4 rounded-xl bg-background p-4 text-sm text-foreground;
+    @apply fixed m-auto flex w-full max-w-sm flex-col gap-4 rounded-xl bg-background p-4 text-left text-sm text-foreground;
 
     box-shadow: 0 0 0 1px var(--border);
   }
@@ -28,7 +28,12 @@
     @apply text-sm text-muted-foreground;
   }
 
-  dialog > footer {
+  dialog > footer,
+  dialog > form > footer {
     @apply -mx-4 -mb-4 flex justify-end gap-2 rounded-b-xl border-t bg-muted/50 p-4;
+  }
+
+  dialog > form {
+    display: contents;
   }
 }

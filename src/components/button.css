@@ -25,6 +25,18 @@
     }
   }
 
+  /* Small size */
+  button[sm],
+  [type="submit"][sm],
+  [role="button"][sm] {
+    @apply h-6 px-2 text-xs;
+
+    & > svg,
+    & > i {
+      @apply size-3.5;
+    }
+  }
+
   /* Secondary variant */
   button[secondary],
   [type="submit"][secondary],

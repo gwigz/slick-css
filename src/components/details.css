@@ -28,6 +28,17 @@
     transform: rotate(180deg);
   }
 
+  /* Left chevron variant */
+  details[left] > summary {
+    justify-content: flex-start;
+    gap: 0.5rem;
+  }
+
+  details[left] > summary::after {
+    order: -1;
+    margin-left: 0;
+  }
+
   details > :not(summary) {
     @apply pb-2.5 text-sm;
   }

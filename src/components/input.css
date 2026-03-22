@@ -15,4 +15,22 @@
   textarea {
     @apply h-auto min-h-16 py-2;
   }
+
+  /* Number input - compact, centered, hide native spinners */
+  input[type="number"] {
+    @apply w-auto text-center;
+
+    appearance: textfield;
+
+    &::-webkit-inner-spin-button,
+    &::-webkit-outer-spin-button {
+      appearance: none;
+    }
+  }
+
+  /* Small size */
+  input[sm]:not([type="checkbox"], [type="radio"], [role="switch"]),
+  textarea[sm] {
+    @apply h-6 px-2 text-xs;
+  }
 }

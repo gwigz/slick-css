@@ -1,6 +1,6 @@
 @layer base {
   body {
-    @apply text-sm/[1.5] antialiased;
+    @apply min-h-screen text-sm/[1.5] antialiased;
 
     font-family:
       system-ui,
